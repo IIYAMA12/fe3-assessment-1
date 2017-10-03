@@ -55,3 +55,5 @@ Licent: https://opensource.org/licenses/GPL-3.0
 
 
 ![Preview bar chart](preview.png)
+
+[View here!](https://iiyama12.github.io/fe3-assessment-1/index.html)
