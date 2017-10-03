@@ -1,73 +1,57 @@
-# ![Assessment 1][banner]
+# Assessment - Population without indoor toilet
 
-This repository can be forked for [**assessment 1**][a1] of [Frontend 3][fe3]
-at [**@CMDA**][cmda].
+## Background
+This bar chart shows the progress of people who own toilets in different countries. It is interesting that some people do not have a toilet, I hope they will soon! 
 
-## TODO
+After analysing, testing, debugging and a lot of failure, I finally started to get a grip on d3. It really requires a different way of thinking and uses something I have never used before. After asking Joost about d3, he said it was called 'chaining'. Which seems to be very user friendly after working with it. But to be honest, in my opinion it is not very logic if you look at it and compare it to the way people handle things in Javascript. Normally indexing means getting deeper in to an object. But with chaining you only go one layer deep and end up receiving the same object (self) back. I do not know yet if I like chaining, but it is definitely less work.
 
-*   [ ] [GitHub Pages](#github-pages)
-*   [ ] [Metadata](#metadata)
-*   [ ] [Workflow](#workflow)
-*   [ ] Replace this document in your fork with your own readme!
+## Data
+After importing the csv file I received this structure:
+```js
+[
+  {
+    "year1": <number>,
+    "year2": <number>,
+    "year3": <number>,
+    "code": "CODE",
+    "country": "COUNTRY"
+  },
+  {
+    // etc.
+  }
+]
+```
+And converted it to this one: (make optimise the readability and code reading speed)
 
-## GitHub Pages
+```js
+[
+  }
+    "code": "CODE",
+    "country": "COUNTRY",
+    "data":[
+      {date:<number - year1>, value<number>},
+      {date:<number - year2>, value<number>},
+      {date:<number - year3>, value<number>},
+    ]
+  },
+  {
+    // etc.
+  }
+]
+```
 
-Set up [GitHub Pages][pages] for this fork through the **Settings** pane.  Use
-the **Master branch** as its source.
+## Features
+* **d3.scaleBand()** https://github.com/d3/d3-scale
+* **d3.scaleLinear()** https://github.com/d3/d3-scale#continuous-scales
+* **domain** https://www.dashingd3js.com/d3js-scales
+* **d3.max** https://github.com/d3/d3-3.x-api-reference/blob/master/Arrays.md
+* **d3.axisBottom** https://github.com/d3/d3-axis/blob/master/README.md#axisBottom
+* **.rangeRound** https://github.com/d3/d3-scale#continuous_rangeRound
+* **.on("click",** https://stackoverflow.com/questions/27499864/addeventlistener-to-div-appended-in-d3
 
-## Metadata
+## License
+Bostock’s, M. (2017, 20 juli). Bar Chart [Source code]. Geraadpleegd van https://bl.ocks.org/mbostock/3885304
+Licent: https://opensource.org/licenses/GPL-3.0
 
-Edit the **description** and **url** of your repository.  Click on edit above
-the green Clone or download button and fill in your correct information.
 
-## Workflow
-
-How you go about your project is up to you other than that it must meet the
-given requirements.  The following steps may help to tackle this challenge
-though.
-
-###### Explore
-
-Explore the [data][].  Make sense of the rows, columns, and what they contain.
-Investigate interesting aspects and possible outcomes.  Figure out what type of
-chart you want and sketch your visualisation.
-
-List the features needed to make your chart work and make sure they match our
-[rubric][].  For example, pie charts or donut charts often lack features needed
-to get good grades in the **application of subject matter** category.  You must
-compensate with other useful features to get a good grade in this case.
-
-Pick the most enticing data and copy it to your fork.
-
-###### Process
-
-Describe the purpose and background of your visualisation in your fork’s readme.
-Portray your data and list the d3 features.
-
-Start writing code.  Feel free to use example code found on the web but make
-sure to include correct citations.  Use inline code comments to describe
-anything of interest.  Don’t forget to document your process.
-
-###### Review
-
-Finish up your readme and review your project.  Audit the code and docs.
-Evaluate whether the project matches our [rubric][] and make changes where
-needed.
-
-Include anything you’re particularly proud of and mention anything that was
-exceptionally hard to accomplish in your readme to make sure lecturers don’t
-miss it!  🌟
-
-[banner]: https://cdn.rawgit.com/cmda-fe3/logo/3b150735/banner-assessment-1.svg
-
-[a1]: https://github.com/cmda-fe3/course-17-18/tree/master/assessment-1#description
-
-[data]: https://github.com/cmda-fe3/course-17-18/tree/master/assessment-1#data
-
-[rubric]: https://github.com/cmda-fe3/course-17-18/tree/master/assessment-1#rubric
-
-[fe3]: https://github.com/cmda-fe3
-
-[cmda]: https://github.com/cmda
-
-[pages]: https://pages.github.com
+![Preview bar chart](preview.png)
