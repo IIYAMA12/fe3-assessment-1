@@ -1,0 +1,34 @@
+button {
+    background-color: #323232;
+    color: white;
+    height: 2rem;
+    width: 4rem;
+    border: none;
+    cursor: pointer;
+    margin-right: 0.3rem;
+}
+
+button:hover {
+    background-color: black;
+}
+
+button:disabled {
+    background-color: gray;
+    cursor: inherit;
+}
+
+.x-axis path {
+    display: none;
+}
+
+.bar {
+    fill: #648cff;
+}
+
+.bar:hover {
+    fill: #457aff;
+}
+
+text {
+    font-family: sans-serif;
+}
